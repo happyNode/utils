@@ -1,6 +1,7 @@
 import { Context } from 'koa';
 import * as _ from 'lodash';
 import * as ipdb from 'ipip-ipdb';
+import axios, { AxiosRequestConfig } from 'axios';
 
 // 获得请求IP
 export function getReqIP(ctx: Context) {
@@ -52,4 +53,16 @@ export function objectToMap(obj: object) {
     map.set(key, obj[key]);
   }
   return map;
+}
+
+export async function sendGetRequest(url: string, opts: AxiosRequestConfig) {
+  const result = await axios.get(url, opts);
+
+  return result;
+}
+
+export async function sendPostRequest(url: string, opts: AxiosRequestConfig) {
+  const result = await axios.post(url, opts);
+
+  return result;
 }
