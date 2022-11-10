@@ -1,11 +1,6 @@
 import { Context } from 'koa';
 import * as _ from 'lodash';
 import * as ipdb from 'ipip-ipdb';
-import * as randomstring from 'randomstring';
-import BigNumber from 'bignumber.js';
-import dayjs from 'dayjs';
-
-const DATE_FORMATE = 'YYYY-MM-DD HH:mm:ss';
 
 // 获得请求IP
 export function getReqIP(ctx: Context) {
@@ -41,30 +36,6 @@ export async function getIpAddr(ctx: Context, ip?: string | string[]) {
 // 线程阻塞毫秒数
 export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-// 获取随机数
-export function getRandom(length = 15, charset = 'alphabetic') {
-  const randomString = randomstring.generate({
-    length,
-    charset,
-  });
-  return randomString;
-}
-
-export function bigEq(
-  a: number | string | BigNumber,
-  b: number | string | BigNumber
-) {
-  return new BigNumber(a).eq(b);
-}
-
-export function getDateEndTime(time?): string {
-  return dayjs(time).endOf('day').format(DATE_FORMATE);
-}
-
-export function getDateStartTime(time?): string {
-  return dayjs(time).startOf('day').format(DATE_FORMATE);
 }
 
 export function mapToObject(map: Map<string, any>) {
