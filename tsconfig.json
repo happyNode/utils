@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["es2017", "esnext.asynciterable"],
+    "target": "es2018",
+    "lib": ["es2018"],
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -15,7 +15,9 @@
     "allowJs": true,
     "noEmit": false,
     "esModuleInterop": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "./dist"
   },
   "include": ["./src/**/*", "src/index.mjs"],
   "exclude": ["node_modules", "tests"]
