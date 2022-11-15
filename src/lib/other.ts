@@ -55,24 +55,24 @@ export function objectToMap(obj: object) {
   return map;
 }
 
-export async function sendGetRequest(
+export async function sendGetRequest<T>(
   url: string,
   opts: AxiosRequestConfig,
   fn: Function
 ) {
-  const result = await axios.get(url, opts);
+  const result = await axios.get<T>(url, opts);
 
   const data = fn(result);
 
-  return result;
+  return data;
 }
 
-export async function sendPostRequest(
+export async function sendPostRequest<T>(
   url: string,
   opts: AxiosRequestConfig,
   fn: Function
 ) {
-  const result = await axios.post(url, opts);
+  const result = await axios.post<T>(url, opts);
 
   const data = fn(result);
 
