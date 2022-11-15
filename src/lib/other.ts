@@ -78,3 +78,7 @@ export async function sendPostRequest<T>(
 
   return data;
 }
+
+export function isEmpty(value) {
+  return _.isEmpty(value);
+}

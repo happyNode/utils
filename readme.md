@@ -39,3 +39,4 @@ npm i happy-node-utils -S
 - objectToMap : 对象转换为 map，只为一级
 - sendGetRequest : 发送 get 请求
 - sendPostRequest : 发送 post 请求
+- isEmpty : 判断值是否为空
