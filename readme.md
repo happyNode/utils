@@ -13,7 +13,8 @@ npm i happy-node-utils -S
 ## 日期
 
 - getDateEndTime : 获取指定日期截止时间
-- getDateStartTime: 获取指定日期开始时间
+- getDateStartTime : 获取指定日期开始时间
+- diffDate : 计算日期间隔
 
 ## 数字
 
@@ -21,6 +22,7 @@ npm i happy-node-utils -S
 - bigDiv : 大数相除
 - bigMul : 大数相乘
 - bigSub : 大数相减
+- bigEq : 大数比较
 
 ## 字符串
 

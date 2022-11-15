@@ -1,5 +1,7 @@
 import BigNumber from 'bignumber.js';
 
+type bigType = number | string | BigNumber;
+
 // 加法函数，用来得到精确的加法结果
 export function bigAdd(...args) {
   let res = new BigNumber(0);
@@ -34,4 +36,8 @@ export function bigSub(...args) {
     res = res.minus(arg);
   }
   return res;
+}
+
+export function bigEq(a: bigType, b: bigType) {
+  return new BigNumber(a).eq(b);
 }

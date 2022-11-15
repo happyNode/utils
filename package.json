@@ -1,11 +1,12 @@
 {
   "name": "happy-node-utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "通用化工具模块",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "pub": "rm -rf ./dist && npm run build && npm publish"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
