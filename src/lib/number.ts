@@ -14,9 +14,10 @@ export function bigAdd(...args) {
 
 //除法函数，用来得到精确的除法结果
 export function bigDiv(arg1, arg2) {
-  if (+arg2 === 0) return 0;
+  let res = new BigNumber(0);
+  if (+arg2 === 0) return res;
 
-  const res = new BigNumber(arg1).dividedBy(arg2);
+  res = new BigNumber(arg1).dividedBy(arg2);
   return res;
 }
 
@@ -26,7 +27,7 @@ export function bigMul(...args) {
   for (const arg of args) {
     res = res.multipliedBy(arg);
   }
-  return res.toNumber();
+  return res;
 }
 
 // 减法函数，用来得到精确的减法结果

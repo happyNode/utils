@@ -1,0 +1,9 @@
+bail: true
+full-trace: true
+enable-source-maps: true
+spec:
+  - test/**/*.test.ts
+timeout: 360000
+ui: bdd
+parallel: false
+exit: true

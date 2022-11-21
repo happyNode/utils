@@ -28,7 +28,7 @@ export function toSnakeCase(str: string) {
 }
 
 // 获取随机数
-export function getRandom(length = 15, charset = 'alphabetic') {
+export function getRandom(length = 15, charset = 'alphabetic'): string {
   const randomString = randomstring.generate({
     length,
     charset,
