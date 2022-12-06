@@ -42,3 +42,11 @@ export function bigSub(...args) {
 export function bigEq(a: bigType, b: bigType) {
   return new BigNumber(a).eq(b);
 }
+
+export function bigGt(a: bigType, b: bigType): boolean {
+  return new BigNumber(a).gt(b);
+}
+
+export function bigGte(a: bigType, b: bigType): boolean {
+  return new BigNumber(a).gte(b);
+}
