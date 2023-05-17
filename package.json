@@ -1,6 +1,6 @@
 {
   "name": "happy-node-utils",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "通用化工具模块",
   "main": "dist/index.js",
   "scripts": {
