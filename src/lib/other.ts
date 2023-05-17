@@ -3,6 +3,9 @@ import * as _ from 'lodash';
 import * as ipdb from 'ipip-ipdb';
 import axios, { AxiosRequestConfig } from 'axios';
 
+import { bigDiv, bigMul } from './number';
+import { TStorageUnit } from './../type';
+
 // 获得请求IP
 export function getReqIP(ctx: Context) {
   const req: any = ctx.req;
@@ -81,4 +84,38 @@ export async function sendPostRequest<T>(
 
 export function isEmpty(value) {
   return _.isEmpty(value);
+}
+
+// 格式化存储单位
+export function formateStorageUnit(
+  size: number | string,
+  nowUnit: TStorageUnit = 'BYTE',
+  toUnit: TStorageUnit = 'TB'
+) {
+  if (nowUnit === toUnit) {
+    return String(size);
+  }
+  const formateList = [
+    'BIT',
+    'BYTE',
+    'KB',
+    'MB',
+    'GB',
+    'TB',
+    'PB',
+    'EB',
+    'ZB',
+    'BB',
+  ];
+  const nowIndex = formateList.indexOf(nowUnit);
+  const toIndex = formateList.indexOf(toUnit);
+  const value =
+    toIndex > nowIndex
+      ? Math.pow(1024, toIndex - nowIndex)
+      : Math.pow(1024, nowIndex - toIndex);
+  if (toIndex > nowIndex) {
+    return bigDiv(size, value).toString();
+  } else {
+    return bigMul(size, value).toString();
+  }
 }
